@@ -5,7 +5,7 @@ import {Logo} from "@/assets/Logo";
 import Body2 from "@/components/ui/body2";
 import ContactForm from "@/components/ContactForm";
 import {Button} from "@/components/ui/button";
-import React from "react";
+import React, {Suspense} from "react";
 
 const SupportPage = () => {
 
@@ -33,7 +33,9 @@ const SupportPage = () => {
                     <TypographyH6 className={'font-bold text-gray-900'}>Contanos tu problema</TypographyH6>
                     <Body2 className={'text-gray-500'}>Completa los datos y carga una imagen con el error que te aparece</Body2>
                 </div>
-                <ContactForm/>
+                <Suspense fallback={<div></div>}>
+                    <ContactForm/>
+                </Suspense>
             </div>
             <Image src={'/elipse.png'} width={600} height={600} alt={'elipse'}
                    className={'blur-[80px] sm:blur-[200px] absolute m-auto left-0 right-0 bottom-0 sm:bottom-[-50px] z-0'}/>

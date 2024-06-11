@@ -23,7 +23,7 @@ const formSchema = z.object({
     email: z.string().min(2).max(50).email('Email invalido'),
     phoneDetails: z.string().min(2).max(50),
     message: z.string().min(2).max(500),
-    file: z.instanceof(File).refine((file) => file.size < 7000000, {
+    file: typeof window === 'undefined' ? z.any() : z.instanceof(File).refine((file) => file.size < 7000000, {
             message: 'Your resume must be less than 7MB.',
         }),
 })
