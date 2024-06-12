@@ -1,19 +1,15 @@
-import Image from "next/image";
 import TypographyH2 from "@/components/ui/typographyH2";
 import TypographyH6 from "@/components/ui/typographyH6";
 import {Logo} from "@/assets/Logo";
 import Body2 from "@/components/ui/body2";
 import ContactForm from "@/components/ContactForm";
-import {Button} from "@/components/ui/button";
 import React, {Suspense} from "react";
+import StyledBackground from "@/components/StyledBackground";
 
 const SupportPage = () => {
 
-
-
     return (
-        <div className={'flex flex-col items-center gap-10 px-4 pb-8'}>
-
+        <StyledBackground>
             <div className={'w-full flex flex-col items-center justify-center z-10'}>
                 <div className={'flex flex-col gap-4 items-center py-6 sm:py-0' }>
 
@@ -37,10 +33,7 @@ const SupportPage = () => {
                     <ContactForm/>
                 </Suspense>
             </div>
-            <Image src={'/elipse.png'} width={600} height={600} alt={'elipse'}
-                   className={'blur-[80px] sm:blur-[200px] absolute m-auto left-0 right-0 bottom-0 sm:bottom-[-50px] z-0'}/>
-
-        </div>
+        </StyledBackground>
     )
 }
 
