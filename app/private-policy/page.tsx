@@ -63,7 +63,7 @@ Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificarem
 
 Si tiene alguna pregunta o inquietud sobre esta Política de Privacidad, por favor contáctenos en:
 
-Correo electrónico: <lerni.education@gmail.com>  
+Correo electrónico: <lerni-education@gmail.com>  
 Dirección: Lavalle Nro. 1118 - Piso 6 - Oficina K. Ciudad Autónoma de Buenos Aires. República Argentina.
 
 `
