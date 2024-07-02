@@ -158,13 +158,12 @@ Dirección: Lavalle Nro. 1118 - Piso 6 - Oficina K - Ciudad Autónoma de Buenos 
 
     return(
         <StyledBackground>
-            <div className={'px-[50px] pb-8 z-10'}>
+            <div className={'px-4 pb-10 z-10 sm:px-8 md:px-16 lg:px-24 xl:px-32'}>
                 <h1>Términos y condiciones</h1>
                 <Markdown remarkPlugins={[remarkGfm]} className={"text-white"}>
                     {markdown}
                 </Markdown>
             </div>
-
         </StyledBackground>
     )
 }

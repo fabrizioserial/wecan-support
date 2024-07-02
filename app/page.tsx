@@ -1,10 +1,11 @@
 import Image from "next/image";
-import {Button} from "@/components/ui/button";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+
+  redirect('/terms-and-conditions');
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Button>Click me</Button>
+    <main className="flex min-h-screen flex-col items-center justify-between px-16 py-24">
     </main>
   );
 }
