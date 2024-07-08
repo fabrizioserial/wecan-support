@@ -1,4 +1,3 @@
-import {TypographyH4} from "@/components/ui/typographyH4";
 import {Logo} from "@/assets/Logo";
 import Body1 from "@/components/ui/body1";
 
