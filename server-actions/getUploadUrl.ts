@@ -7,28 +7,24 @@ interface GetUploadUrlProps {
     id: string
 }
 
-export const getUploadUrl = async ({ fileName, fileType, fileSize,id }:GetUploadUrlProps) => {
+export const getUploadUrl = async ({ fileName, fileType, fileSize, id }: GetUploadUrlProps) => {
     console.log('before')
 
     try {
         // POST request to backend route handler
-        console.log('started')
-        const res = await fetch(`${'http://localhost:3000'}/api/media`, {
+        const res = await fetch(`${process.env.LERNI_SUPPORT_URL}/api/media`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({fileName, fileType, fileSize,id })
+            body: JSON.stringify({ fileName, fileType, fileSize, id })
         })
-
+        
         // Response includes a putUrl for upload and a getUrl for displaying a preview
         const { putUrl, getUrl } = await res.json()
-        console.log("RESPONSE: " , putUrl, getUrl)
 
         // Request made to putUrl, media file included in body
-
-
-        return { putUrl, uploadedUrl: getUrl }
+        return { putUrl, uploadedUrl: getUrl, status: res.status, statusText: res.statusText }
     } catch (error) {
-        console.log(error)
-        throw error
+        console.log(error);
+        return { putUrl: "", uploadedUrl: "", status: 500, statusText: 'error' }
     }
 }

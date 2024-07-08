@@ -1,12 +1,14 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface TypographyH2Props {
     children: ReactNode;
+    className?: string;
 }
 
-export default function TypographyH2({children}:TypographyH2Props){
+export default function TypographyH2({ children, className = '' }: TypographyH2Props) {
     return (
-        <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight text-white">
+        <h2 className={cn("scroll-m-20 text-3xl font-semibold tracking-tight text-white", className)}>
             {children}
         </h2>
     )

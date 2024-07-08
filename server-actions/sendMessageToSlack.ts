@@ -39,14 +39,15 @@ export const sendMessage = async( data: MessageProps) => {
         /*
         [{"type": "section", "text": {"type": "plain_text", "text": "Hello world"}}]
          */
-        const res = await fetch(`${'http://localhost:3000'}/api/slack/notify`, {
+        const res = await fetch(`${process.env.LERNI_SUPPORT_URL}/api/slack/notify`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(message)
         })
         console.log('RESPONSE: ', res)
+        return { status: res.status, statusText: res.statusText }
     } catch (error) {
         console.log(error)
-        throw error
+        return { status: 500, statusText: 'error' }
     }
 }
