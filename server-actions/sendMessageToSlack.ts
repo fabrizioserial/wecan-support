@@ -30,7 +30,7 @@ export const sendMessage = async( data: MessageProps) => {
             "type": "section",
             "text":{
                 "type": "mrkdwn",
-                "text": "Archivo: ${data.fileURL}"
+                "text": "Archivo: ${process.env.S3_URL}/${data.fileURL}"
             }
         }
           ]
