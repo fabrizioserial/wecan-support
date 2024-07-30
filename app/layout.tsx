@@ -6,8 +6,8 @@ import {Navbar} from "@/components/Navbar";
 
 
 export const metadata: Metadata = {
-    title: "Lerni - Support",
-    description: "This website is a support page for Lerni",
+    title: "WeCAN - Support",
+    description: "This website is a support page for WeCAN",
     icons: "favicon.ico",
 };
 
@@ -30,7 +30,7 @@ export default function RootLayout({
         <body
             className={
                 cn(
-                        "min-h-screen bg-background font-sans antialiased bg-primary-900",
+                        "min-h-screen bg-background font-sans antialiased bg-primary-400",
                         fontSans.variable
                     )
                 }

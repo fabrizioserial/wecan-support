@@ -18,7 +18,7 @@ const SupportPage = () => {
 
                     <div className={'flex flex-col items-center'}>
                         <TypographyH2>¿Tuviste un problema?</TypographyH2>
-                        <TypographyH6 className={'text-gray-400'}>Estamos para ayudarte</TypographyH6>
+                        <TypographyH6 className={'text-gray-100'}>Estamos para ayudarte</TypographyH6>
                     </div>
                 </div>
 

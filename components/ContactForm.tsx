@@ -92,7 +92,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className={'max-w-[550px] w-full rounded-3xl bg-gray-200 px-6 py-8 z-10'}>
+    <div className={'max-w-[550px] w-full rounded-3xl bg-white px-6 py-8 z-10'}>
       {!isSuccess && (
         <div className={'mb-4'}>
           <TypographyH6 className={'font-bold text-gray-900'}>Contanos tu problema</TypographyH6>
