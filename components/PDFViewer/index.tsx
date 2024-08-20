@@ -1,36 +1,25 @@
-'use client'
+"use client";
+import { Viewer, Worker } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 
-import { Document, Page, pdfjs } from "react-pdf";
-import React from "react";
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-    'pdfjs-dist/build/pdf.worker.min.mjs',
-    import.meta.url,
-).toString();
+interface PdfViewerProps {
+    url: string;
 
-interface PDFViewerInterface {
-    url: string
 }
 
-const PDFViewer = ({url}:PDFViewerInterface) => {
-    const options = {
-        cMapUrl: "cmaps/",
-        cMapPacked: true,
-        standardFontDataUrl: "standard_fonts/",
-    };
-    return(
-        <Document
-            file={url}
-            options={options}
-            renderMode="canvas"
-            className=""
-        >
-            <Page
-                className=""
-                renderAnnotationLayer={false}
-                renderTextLayer={false}
-            />
-        </Document>
-    )
-}
-
-export default PDFViewer
+const PdfViewer = ({ url }:PdfViewerProps) => {
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    return (
+        <div className="h-screen w-screen">
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                <Viewer
+                    fileUrl={url}
+                    plugins={[defaultLayoutPluginInstance]}
+                />
+            </Worker>
+        </div>
+    );
+};
+export default PdfViewer;
