@@ -14,6 +14,7 @@ const client = new S3Client({
 })
 
 const POST = async (req: NextRequest) => {
+    console.log("S3 MEDIA")
     try {
 
         const { fileName, fileType, fileSize,id } = await req.json()
@@ -38,7 +39,6 @@ const POST = async (req: NextRequest) => {
         })
         // Generate pre-signed URL for GET request
         const getUrl = await getSignedUrl(client, getCommand, { expiresIn: 600 })
-
         return NextResponse.json({ putUrl, getUrl }, { status: 200 })
     } catch (error) {
         console.log(error)

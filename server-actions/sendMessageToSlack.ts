@@ -44,7 +44,7 @@ export const sendMessage = async( data: MessageProps) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(message)
         })
-        console.log('RESPONSE: ', res)
+        console.log('RESPONSE: ', res,`${process.env.LERNI_SUPPORT_URL}/api/slack/notify`)
         return { status: res.status, statusText: res.statusText }
     } catch (error) {
         console.log(error)
