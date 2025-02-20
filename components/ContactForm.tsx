@@ -67,28 +67,28 @@ export default function ContactForm() {
               fileSize: values.file.size,
               id: id,
             })
-        //
-        // const uploadResponse = await fetch(putUrl, {
-        //   body: values.file,
-        //   method: "PUT",
-        //   headers: { "Content-Type": values.file.type }
-        // })
-        //
-        // const { status: sendMessageStatus } = await sendMessage({
-        //   id: id,
-        //   fullName: values.fullname,
-        //   email: values.email,
-        //   phoneDetails: values.phoneDetails,
-        //   message: values.message,
-        //   fileURL: id
-        // })
-        // const errorStatusCodes = [400, 401, 403, 404, 409, 422, 500];
-        // if (errorStatusCodes.includes(uploadStatus) || errorStatusCodes.includes(sendMessageStatus)) {
-        //   setIsError(true)
-        // } else {
-        //   setIsSuccess(() => true);
-        //   form.reset();
-        // }
+        
+        const uploadResponse = await fetch(putUrl, {
+          body: values.file,
+          method: "PUT",
+          headers: { "Content-Type": values.file.type }
+        })
+        
+        const { status: sendMessageStatus } = await sendMessage({
+          id: id,
+          fullName: values.fullname,
+          email: values.email,
+          phoneDetails: values.phoneDetails,
+          message: values.message,
+          fileURL: id
+        })
+        const errorStatusCodes = [400, 401, 403, 404, 409, 422, 500];
+        if (errorStatusCodes.includes(uploadStatus) || errorStatusCodes.includes(sendMessageStatus)) {
+          setIsError(true)
+        } else {
+          setIsSuccess(() => true);
+          form.reset();
+        }
       }
     }catch (e){
       console.log(e)
