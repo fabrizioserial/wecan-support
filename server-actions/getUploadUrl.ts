@@ -15,7 +15,7 @@ export const getUploadUrl = async ({ fileName, fileType, fileSize, id }: GetUplo
     try {
         console.log({ fileName, fileType, fileSize, id })
         // POST request to backend route handler
-const body = JSON.stringify({ fileName, fileType, fileSize, id })
+        const body = JSON.stringify({ fileName, fileType, fileSize, id })
         console.log(body)
         const res = await fetch(`${process.env.LERNI_SUPPORT_URL}/api/media`, {
             method: "POST",
